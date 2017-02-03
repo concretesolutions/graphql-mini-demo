@@ -81,5 +81,22 @@ module.exports = new GraphQLSchema({
         }
       },
     }
+  }),
+
+  mutation: new GraphQLObjectType({
+    name: 'RootMutationType',
+    fields: {
+      updatePassword: {
+        type: GraphQLString,
+        args: {
+          password: {
+            type: new GraphQLNonNull(GraphQLString)
+          }
+        },
+        resolve: (parent, args, context) => {
+          return 'FAKE RESPONSE';
+        }
+      }
+    }
   })
 });
