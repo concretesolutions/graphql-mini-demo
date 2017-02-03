@@ -45,12 +45,26 @@ module.exports = new GraphQLSchema({
   query: new GraphQLObjectType({
     name: 'RootQueryType',
     fields: {
+
       hello: {
         type: GraphQLString,
-        resolve() {
-          return 'world';
+        resolve(parent, args, request) {
+          return request.user ? request.user.login : 'stranger';
         }
       },
+
+      myPosts: {
+        type: new GraphQLList(postType),
+        resolve(parent, args, request) {
+          if (!request.user) {
+            throw new Error('Must be logged in');
+          }
+          return dbPosts.filter(post => {
+            return post.author === request.user.id;
+          });
+        }
+      },
+
       users: {
         type: new GraphQLList(userType),
         args: {
