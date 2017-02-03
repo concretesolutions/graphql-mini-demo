@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "author": 1,
+    "text": "Aaaaa"
+  },
+  {
+    "id": 2,
+    "author": 1,
+    "text": "Bbbbb"
+  },
+  {
+    "id": 3,
+    "author": 2,
+    "text": "Ccccc"
+  },
+  {
+    "id": 4,
+    "author": 2,
+    "text": "Ddddd"
+  },
+  {
+    "id": 5,
+    "author": 3,
+    "text": "Eeeee"
+  },
+  {
+    "id": 6,
+    "author": 1,
+    "text": "Fffff"
+  },
+  {
+    "id": 7,
+    "author": 1,
+    "text": "Ggggg"
+  }
+]
