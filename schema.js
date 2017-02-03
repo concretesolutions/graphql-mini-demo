@@ -6,10 +6,20 @@ const dbPosts = require('./data/posts');
 
 const postType = new GraphQLObjectType({
   name: 'Post',
-  fields: {
-    text: {
-      type: new GraphQLNonNull(GraphQLString)
-    }
+  fields: () => {
+    return {
+      text: {
+        type: new GraphQLNonNull(GraphQLString)
+      },
+      likers: {
+        type: new GraphQLList(userType),
+        resolve(parent) {
+          return dbUsers.filter(user => {
+            return user.likes.indexOf(parent.id) !== -1;
+          });
+        }
+      }
+    };
   }
 });
 

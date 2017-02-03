@@ -2,18 +2,22 @@
   {
     "id": 1,
     "login": "Mônica",
-    "password": "123"
+    "password": "123",
+    "likes": [1, 2, 3]
   }, {
     "id": 2,
     "login": "Cebolinha",
-    "password": "123"
+    "password": "123",
+    "likes": []
   }, {
     "id": 3,
     "login": "Cascão",
-    "password": "123"
+    "password": "123",
+    "likes": [1, 2, 3, 4, 5]
   }, {
     "id": 4,
     "login": "Magali",
-    "password": "123"
+    "password": "123",
+    "likes": [1, 2, 5, 6, 7]
   }
 ]
